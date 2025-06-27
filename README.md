@@ -1,35 +1,31 @@
-Features
--Scans local network IP range for active hosts
--Retrieves MAC and IP addresses using ARP requests
--Scans for common open ports using TCP socket connections
--Outputs results to both JSON and CSV formats
+# Python Network Scanner
 
-How It Works
-Uses ARP requests to identify active devices within a given subnet
-Scans each active device for specified TCP ports
-Stores results in scan_results.json and scan_report.csv
+A Python tool to scan local network IP ranges for active hosts, retrieve their MAC and IP addresses via ARP, and scan common TCP ports. Results are saved in both JSON and CSV formats.
 
-Requirements
-Python 3.x
+## Features
+- Scans local subnet for active devices using ARP requests
+- Retrieves MAC and IP addresses of active hosts
+- Scans specified TCP ports using socket connections
+- Outputs results to scan_results.json and scan_report.csv
 
-scapy
-To install required libraries, run:
-pip install scapy
+## How It Works
+- Uses ARP requests to discover active devices in a subnet
+- Scans each active device for specified open TCP ports
+- Stores scan results in JSON and CSV files
 
-Usage
-Edit the script as needed:
+## Requirements
+- Python 3.x
+- scapy library (install with `pip install scapy`)
 
-Set your target IP range in the ip_range variable (e.g., "192.168.1.1/24")
+## Usage
+- Set your target IP range in the `ip_range` variable (e.g., "192.168.1.1/24")
+- Define ports to scan in `ports_to_scan` (e.g., [22, 80, 443])
+- Run the script:
 
-Define the list of ports to scan in ports_to_scan (e.g., [22, 80, 443])
 
-Then run the script:
-python NetworkScanner.py
+## Notes
+- Requires admin/root privileges to send ARP packets
+- Use responsibly on networks you own or have permission to scan
 
-Notes
-Requires administrative/root privileges to send ARP packets
-
-Use responsibly on networks you own or have permission to scan
-
-License
-This project is open-source and available under the MIT License.
+## License
+MIT License
